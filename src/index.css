@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ServiceLocal — warm editorial SaaS aesthetic.
+   Terracotta + deep teal + warm cream. All HSL. */
+
+@layer base {
+  :root {
+    --background: 36 40% 97%;
+    --foreground: 195 35% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 195 35% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 35% 12%;
+
+    /* Deep teal as primary brand */
+    --primary: 188 60% 22%;
+    --primary-foreground: 36 40% 97%;
+    --primary-glow: 188 50% 38%;
+
+    /* Terracotta accent */
+    --accent: 14 75% 58%;
+    --accent-foreground: 36 40% 97%;
+    --accent-soft: 16 85% 92%;
+
+    --secondary: 36 30% 92%;
+    --secondary-foreground: 195 35% 12%;
+
+    --muted: 36 25% 93%;
+    --muted-foreground: 195 15% 38%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 36 40% 97%;
+
+    --success: 152 55% 38%;
+    --success-foreground: 36 40% 97%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 195 35% 12%;
+
+    --border: 36 20% 86%;
+    --input: 36 20% 88%;
+    --ring: 188 60% 22%;
+
+    --radius: 0.875rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(36 50% 95%) 0%, hsl(16 70% 90%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(14 75% 58%) 0%, hsl(28 85% 62%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(195 35% 12% / 0.06), 0 4px 16px -4px hsl(195 35% 12% / 0.08);
+    --shadow-elegant: 0 10px 40px -12px hsl(188 60% 22% / 0.18);
+    --shadow-glow: 0 0 60px -10px hsl(14 75% 58% / 0.35);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar */
+    --sidebar-background: 36 35% 96%;
+    --sidebar-foreground: 195 35% 18%;
+    --sidebar-primary: 188 60% 22%;
+    --sidebar-primary-foreground: 36 40% 97%;
+    --sidebar-accent: 36 25% 90%;
+    --sidebar-accent-foreground: 195 35% 12%;
+    --sidebar-border: 36 20% 84%;
+    --sidebar-ring: 188 60% 22%;
+  }
+
+  .dark {
+    --background: 195 40% 8%;
+    --foreground: 36 30% 95%;
+    --card: 195 35% 11%;
+    --card-foreground: 36 30% 95%;
+    --popover: 195 35% 11%;
+    --popover-foreground: 36 30% 95%;
+    --primary: 188 55% 55%;
+    --primary-foreground: 195 40% 8%;
+    --primary-glow: 188 50% 65%;
+    --accent: 14 75% 62%;
+    --accent-foreground: 195 40% 8%;
+    --accent-soft: 14 30% 20%;
+    --secondary: 195 25% 18%;
+    --secondary-foreground: 36 30% 95%;
+    --muted: 195 25% 16%;
+    --muted-foreground: 36 15% 65%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 36 30% 95%;
+    --success: 152 50% 50%;
+    --success-foreground: 36 30% 95%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 195 40% 8%;
+    --border: 195 25% 20%;
+    --input: 195 25% 20%;
+    --ring: 188 55% 55%;
+    --sidebar-background: 195 38% 10%;
+    --sidebar-foreground: 36 30% 92%;
+    --sidebar-primary: 188 55% 55%;
+    --sidebar-primary-foreground: 195 40% 8%;
+    --sidebar-accent: 195 25% 18%;
+    --sidebar-accent-foreground: 36 30% 95%;
+    --sidebar-border: 195 25% 20%;
+    --sidebar-ring: 188 55% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-accent { background: var(--gradient-accent); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
